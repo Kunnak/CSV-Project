@@ -10,3 +10,5 @@ Das Programm fragt der User nach seinem Nicknamen ab und speichert diesen in ein
 Anschließend wird ein Backup von dieser CSV-Datei erstellt.
 Sollte die Datei der Nicknamen verändert, oder ein Backup angestoßen worden sein,
 werden diese Aktivitäten in einer logfile-Datei gespeichert.
+
+Mehr später..

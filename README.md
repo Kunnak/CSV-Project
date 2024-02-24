@@ -2,7 +2,7 @@
 Erstellen von CSV-Dateien für Nicknamen, Backups, Highscores [für ein Spiel]
 
 - main.py - Hauptdatei
-- welcome.py - Input des Nicknamen
+- welcome.py - Eingabe Nickname
 - files.py - CSV-Dateien
 - functions.py - Funktionsbibliothek
 

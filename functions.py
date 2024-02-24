@@ -31,12 +31,10 @@ def create_backup():
                 reader = csv.reader(file1)
 
                 writer.writerow([trenner])
-                writer.writerow([' ', ' ', ' ',files.backup_time])
+                writer.writerow([' ', ' ', ' ', files.backup_time])
 
                 for row in reader:
                     writer.writerow(row)
-
-            bool_backup_logfile = True
 
         if bool_backup_logfile:
 
@@ -49,8 +47,8 @@ def create_backup():
                 writer_log.writerow(output_time)
                 output_time.clear()
 
-                bool_backup = False
-                bool_backup_logfile = False
+        bool_backup = False
+        bool_backup_logfile = False
 
     else:
 
@@ -62,8 +60,6 @@ def create_backup():
 
             writer.writerow(output_time)
             output_time.clear()
-
-            bool_backup = False
 
 
 def save_nickname():
@@ -85,3 +81,4 @@ def save_nickname():
         files.log_nickname.append(files.welcome.nickname)
 
         writer.writerow(files.log_nickname)
+        

@@ -1,7 +1,7 @@
 # CSV-Project
 Erstellen von CSV-Dateien für Nicknamen, Backups, Highscores [für ein Spiel]
 
-main.py - Huaptdatei
+main.py - Hauptdatei
 welcome.py - Abfrage des Nicknames des Users
 files.py - CSV-Dateien
 functions.py - Funktionsbibliothek

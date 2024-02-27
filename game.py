@@ -45,7 +45,7 @@ def spawn_rectangle():
 
 rectangles = []
 
-for i in range(5):
+for i in range(4):
     rectangles.append(Rectangle(spawn_rectangle(), -200, speed))
 
 running = True
@@ -78,10 +78,12 @@ def game_loop():
             rectangle.draw(screen)
             if rectangle.y >= height:
                 rectangles.remove(rectangle)
-                rectangles.append(Rectangle(spawn_rectangle(), -200, speed))
+                # rectangles.append(Rectangle(spawn_rectangle(), -200, speed))
 
-        if rectangle.y >= -24:
+        if rectangle.y >= -20:
             rectangles.append(Rectangle(spawn_rectangle(), -200, speed))
+
+        pygame.draw.line(screen, (0, 0, 0), (1, 200), (500, 200))
 
         clock.tick(FPS)
         pygame.display.update()

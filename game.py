@@ -52,7 +52,7 @@ running = True
 
 
 def game_loop():
-    global running, speed
+    global running, speed, punkte
     while running:
         screen.fill(WHITE)
 
@@ -72,6 +72,7 @@ def game_loop():
                             rectangles.remove(rectangle)
                             speed = speed + 0.05
                             rectangle.speed = speed
+                            punkte = punkte + 1
 
         for rectangle in rectangles[:]:
             rectangle.move()

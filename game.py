@@ -1,9 +1,9 @@
+import time
+
 import pygame
 import random
 
 pygame.init()
-
-SCREEN = WIDTH, HEIGHT = 288 * 2, 512 * 2
 
 info = pygame.display.Info()
 width = 500
@@ -15,9 +15,13 @@ clock = pygame.time.Clock()
 FPS = 60
 
 WHITE = (255, 255, 255)
+RED = (255, 0, 0)
 
+leben = 30
 punkte = 0
 speed = 3
+i = 1
+spawn_bool = True
 
 
 class Rectangle:
@@ -25,11 +29,11 @@ class Rectangle:
         self.x = x
         self.y = y
         self.width = 99
-        self.height = 175
+        self.height = 190
         self.speed = speed
 
     def draw(self, screen):
-        pygame.draw.rect(screen, (0, 0, 0), (self.x, self.y, self.width, self.height))
+        pygame.draw.rect(screen, (0, 0, 0), (self.x, self.y, self.width, self.height), 10)
 
     def move(self):
         self.y += self.speed
@@ -46,13 +50,13 @@ def spawn_rectangle():
 rectangles = []
 
 for i in range(4):
-    rectangles.append(Rectangle(spawn_rectangle(), -200, speed))
+    rectangles.append(Rectangle(spawn_rectangle(), -400, speed))
 
 running = True
 
 
 def game_loop():
-    global running, speed, punkte
+    global running, speed, punkte, leben, i, spawn_bool
     while running:
         screen.fill(WHITE)
 
@@ -68,25 +72,32 @@ def game_loop():
                 if event.button == 1:
 
                     for rectangle in rectangles[:]:
-                        if rectangle.is_clicked(event.pos) and rectangle.y > 20:
+                        if rectangle.is_clicked(event.pos):
                             rectangles.remove(rectangle)
+
                             speed = speed + 0.05
                             rectangle.speed = speed
                             punkte = punkte + 1
 
+        pygame.draw.line(screen, (0, 0, 0), (0, 700), (500, 700), 10)
+        pygame.draw.rect(screen, RED, (0, 702, 500, 900))
+
         for rectangle in rectangles[:]:
             rectangle.move()
             rectangle.draw(screen)
-            if rectangle.y >= height:
+
+            if rectangle.y > height:
                 rectangles.remove(rectangle)
-                # rectangles.append(Rectangle(spawn_rectangle(), -200, speed))
 
-        if rectangle.y >= -20:
-            rectangles.append(Rectangle(spawn_rectangle(), -200, speed))
+        if rectangle.y >= -200:
+            rectangles.append(Rectangle(spawn_rectangle(), -400, speed))
 
-        pygame.draw.line(screen, (0, 0, 0), (1, 200), (500, 200))
+
 
         clock.tick(FPS)
         pygame.display.update()
+
+        if leben <= 10:
+            running = False
 
     pygame.quit()

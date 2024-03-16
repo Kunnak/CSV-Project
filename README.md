@@ -1,14 +1,26 @@
 # CSV-Project
 Erstellen von CSV-Dateien für Nicknamen, Backups, Highscores [für mein PianoTiles]
 
+-------------------------------------------------------------------------------------------------
+
+PYTHON-DATEIEN
+
 - main.py - Hauptdatei
 - welcome.py - Eingabe Nickname
 - files.py - CSV-Dateien
 - functions.py - Funktionsbibliothek
 - game.py - Spielablauf
+- 
+-------------------------------------------------------------------------------------------------
+
+CSV-DATEIEN
 
 - nicknames.csv - CSV-Datei für die Speicherung aller Nicknames
+- nicknames_backup.csv - CSV-Datei als Backup aller Nicknames
 - highscore.csv - CSV-Datei für die Speicherung aller erreichten Punkte
+- logfile.csv - CSV-Datei für die Speicherung aller aktivitäten in diesem Programm
+  
+-------------------------------------------------------------------------------------------------
 
 Das Programm fragt den User nach seinem Nicknamen ab und speichert diesen in eine CSV-Datei.
 Anschließend wird ein Backup von dieser CSV-Datei erstellt, sollte dieser Username noch nicht
@@ -29,3 +41,5 @@ zogen. Sollte der Spieler kein Leben mehr zur Verfügung haben, wird das Spiel b
 erreichten Punkte werden ausgegeben sowie die 10 besten Highscores die erreicht worden sind.
 
 Mehr später..
+
+-------------------------------------------------------------------------------------------------

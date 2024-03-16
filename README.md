@@ -10,7 +10,7 @@ PYTHON-DATEIEN
 - files.py - CSV-Dateien
 - functions.py - Funktionsbibliothek
 - game.py - Spielablauf
-- 
+  
 -------------------------------------------------------------------------------------------------
 
 CSV-DATEIEN

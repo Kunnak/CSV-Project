@@ -16,7 +16,7 @@ PYTHON-DATEIEN
 CSV-DATEIEN
 
 - nicknames.csv - CSV-Datei für die Speicherung aller Nicknames
-- nicknames_backup.csv - CSV-Datei als Backup aller Nicknames
+- nicknames_backup.csv - CSV-Datei als Backup für die Nicknames-Datei
 - highscore.csv - CSV-Datei für die Speicherung aller erreichten Punkte
 - logfile.csv - CSV-Datei für die Speicherung aller aktivitäten in diesem Programm
   

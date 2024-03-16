@@ -1,4 +1,5 @@
-    TIME    ,     TYPE     ,     INFO
+-----------------------------------------------------------------------------------------------------------------------
+    TIME    ,     TYPE     ,     INFO    ,      WHAT HAPPENED                                                         |
 -----------------------------------------------------------------------------------------------------------------------
 
 [TIME: 2024-02-24 | 12:47],[NEW NICKNAME],Yannick
@@ -20,4 +21,6 @@
 [TIME: 2024-02-24 | 12:49],[NEW NICKNAME],LeonardoDiCaprio
 [TIME: 2024-02-24 | 12:49],[BACKUP],SUCCESS
 [TIME: 2024-02-24 | 12:50],[NEW NICKNAME],BestProgrammerEver
-[TIME: 2024-02-24 | 12:50],[BACKUP],SUCCESS
+[TIME: 2024-03-16 | 13:14],[NEW NICKNAME],NeuerSpieler
+[TIME: 2024-03-16 | 13:17],[NEW NICKNAME],Tapper
+[TIME: 2024-03-16 | 13:17],[BACKUP],SUCCESS

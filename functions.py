@@ -4,6 +4,8 @@
 
 import csv
 import files
+import game
+import welcome
 
 #######################################################################################################################
 # VARIABLES
@@ -12,6 +14,7 @@ import files
 output_time = files.output_time
 bool_backup = False
 bool_backup_logfile = False
+bool_nickname_duplicate = False
 trenner = "#######################################################################################################################"
 
 #######################################################################################################################
@@ -19,8 +22,25 @@ trenner = "#####################################################################
 #######################################################################################################################
 
 
-def create_backup():
-    global bool_backup, bool_backup_logfile
+def check_nickname_duplicate():
+    global bool_backup, bool_backup_logfile, bool_nickname_duplicate
+
+    with open(files.csv_nicknames, mode='r', newline='') as file:
+        reader = csv.reader(file)
+
+        for row in reader:
+
+            if row[1].lower() == welcome.nickname.lower():
+                bool_nickname_duplicate = False
+                break
+
+            else:
+                bool_nickname_duplicate = True
+
+
+# function for username backup
+def create_backup_nicknames():
+    global bool_backup, bool_backup_logfile, nickname
 
     if bool_backup:
 
@@ -58,12 +78,18 @@ def create_backup():
             output_time.append(files.output_backup)
             output_time.append(files.backup_fail)
 
+            info2 = str(welcome.nickname.upper() + ' HAT DAS SPIEL GESTARTET!')
+
+            output_time.append(info2)
+
+
             writer.writerow(output_time)
             output_time.clear()
 
 
+# function for saving nicknames
 def save_nickname():
-    global output_time, bool_backup
+    global output_time, bool_backup, bool_backup_logfile
 
     with open(files.csv_nicknames, mode='a', newline='') as file:
         writer = csv.writer(file)
@@ -73,6 +99,7 @@ def save_nickname():
         writer.writerow(files.nickname_time)
 
         bool_backup = True
+        bool_backup_logfile = True
 
     with open(files.csv_logfile, mode='a', newline='') as file:
         writer = csv.writer(file)
@@ -81,4 +108,34 @@ def save_nickname():
         files.log_nickname.append(files.welcome.nickname)
 
         writer.writerow(files.log_nickname)
-        
+
+
+def insert_score():
+
+    with open(files.csv_highscore, mode='a', newline='') as file:
+        writer = csv.writer(file)
+
+        files.highscore_time.append(welcome.nickname)
+        files.highscore_time.append(game.punkte)
+
+        writer.writerow(files.highscore_time)
+
+
+def output_score():
+    print(f'\nDu hast {game.punkte} erreicht!')
+    print('\n')
+
+
+def output_highscore():
+
+    with open(files.csv_highscore, mode ='r', newline='') as file:
+        reader = csv.reader(file)
+
+        counter = 0
+
+        while counter < 10 or row == '':
+
+            for row in reader:
+                print(row)
+
+            counter += 1

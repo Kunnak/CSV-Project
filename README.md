@@ -7,6 +7,9 @@ Erstellen von CSV-Dateien für Nicknamen, Backups, Highscores [für mein PianoTi
 - functions.py - Funktionsbibliothek
 - game.py - Spielablauf
 
+- nicknames.csv - CSV-Datei für die Speicherung aller Nicknames
+- highscore.csv - CSV-Datei für die Speicherung aller erreichten Punkte
+
 Das Programm fragt den User nach seinem Nicknamen ab und speichert diesen in eine CSV-Datei.
 Anschließend wird ein Backup von dieser CSV-Datei erstellt, sollte dieser Username noch nicht
 existieren. Sollte der Username bereits vorhanden sein, wird kein neuer Eintrag in der CSV-Datei

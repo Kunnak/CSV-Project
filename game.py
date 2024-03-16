@@ -6,12 +6,12 @@ import random
 pygame.init()
 
 info = pygame.display.Info()
-width = 500
-height = 900
+WIDTH = 500
+HEIGHT = 900
 
-screen = pygame.display.set_mode((width, height))
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
 
-clock = pygame.time.Clock()
+CLOCK = pygame.time.Clock()
 FPS = 60
 
 WHITE = (255, 255, 255)
@@ -86,15 +86,13 @@ def game_loop():
             rectangle.move()
             rectangle.draw(screen)
 
-            if rectangle.y > height:
+            if rectangle.y > HEIGHT:
                 rectangles.remove(rectangle)
 
         if rectangle.y >= -200:
             rectangles.append(Rectangle(spawn_rectangle(), -400, speed))
 
-
-
-        clock.tick(FPS)
+        CLOCK.tick(FPS)
         pygame.display.update()
 
         if leben <= 10:
